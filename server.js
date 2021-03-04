@@ -13,7 +13,10 @@ try {
    db.mongoose.connect(
     connectionString,
     { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log(" Mongoose is connected")
+    () => {
+      console.log(" Mongoose is connected")
+      initial();
+    }
   );
 
 } catch (e) {
@@ -57,4 +60,4 @@ require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/article.routes')(app);
 
-app.listen(() => console.log(`listening ok`))
+app.listen(port, () => console.log(`listening ok`))
