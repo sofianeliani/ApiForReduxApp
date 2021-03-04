@@ -57,4 +57,4 @@ require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/article.routes')(app);
 
-app.listen(port, () => console.log(`listening to localhost:3000/`))
+app.listen(() => console.log(`listening ok`))
