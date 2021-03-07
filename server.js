@@ -60,4 +60,4 @@ require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/article.routes')(app);
 
-app.listen(() => console.log(`listening ok`))
+app.listen(port, () => console.log(`listening ok`))
