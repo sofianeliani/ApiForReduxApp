@@ -59,7 +59,7 @@ try {
 // app.use(cors(corsOptions));
 
 const corsOptions = {
-  origin: ['http://localhost'],
+  origin: ['http://18.185.46.151'],
   allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Methods", "Access-Control-Request-Headers"],
   credentials: true,
   enablePreflight: true
