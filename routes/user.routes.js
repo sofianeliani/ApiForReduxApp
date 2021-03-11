@@ -5,9 +5,6 @@ const User = require('../models/user.model');
 module.exports = function(app) {
     app.use(function(req, res, next){
         res.header(
-            'Content-Type', 'application/json',
-            'Accept', 'application/json',
-            'Access-Control-Allow-Origin: *',
             "Access-Control-Allow-Headers",
             "x-access-token, Origin, Content-Type, Accept"
         );
