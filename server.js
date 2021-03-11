@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express()
-const port = 3000
+const port = 443;
 const db = require("./models");
 const Role = db.role;
 const connectionString  = "mongodb+srv://Admin:Admin@cluster0.imlvo.mongodb.net/Myreduxapp?retryWrites=true&w=majority";
@@ -48,15 +48,6 @@ try {
       }
     });
   }
-
-  // prevent CORS problems
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT ,DELETE');
-    res.header('Access-Control-Allow-Credentials', true);
-    next();
-})
 
 /* use middleware */
 app.use(cors({credentials: true, origin: true}));
