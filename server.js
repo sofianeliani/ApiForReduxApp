@@ -49,14 +49,24 @@ try {
     });
   }
 
-  const corsOptions = {
-    origin: true,
-    optionsSuccessStatus: 200,
-    credentials: true
-  }
+  // const corsOptions = {
+  //   origin: true,
+  //   optionsSuccessStatus: 200,
+  //   credentials: true
+  // }
 
 /* use middleware */
+// app.use(cors(corsOptions));
+
+const corsOptions = {
+  origin: ['http://localhost'],
+  allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Methods", "Access-Control-Request-Headers"],
+  credentials: true,
+  enablePreflight: true
+}
+
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
