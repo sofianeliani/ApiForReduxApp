@@ -49,8 +49,14 @@ try {
     });
   }
 
+  const corsOptions = {
+    origin: ['http://18.185.46.151:3001/', 'http://localhost:3001'],
+    optionsSuccessStatus: 200,
+    credentials: true
+  }
+
 /* use middleware */
-app.use(cors({credentials: true, origin: true}));
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
