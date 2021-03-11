@@ -3,9 +3,6 @@ const controller = require('../controllers/user.controller');
 const User = require('../models/user.model');
 
 module.exports = function(app) {
-    app.use(function(req, res, next){
-        next();
-    });
 
     app.get("/api/content", controller.content);
 
