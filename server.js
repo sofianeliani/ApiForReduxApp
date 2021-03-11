@@ -50,7 +50,7 @@ try {
   }
 
   const corsOptions = {
-    origin: ['http://18.185.46.151:3001/', 'http://localhost:3001'],
+    origin: true,
     optionsSuccessStatus: 200,
     credentials: true
   }
