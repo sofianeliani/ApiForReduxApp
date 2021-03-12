@@ -1,6 +1,7 @@
 const { authJwt } = require('../middlewares');
 const controller = require('../controllers/user.controller');
 const User = require('../models/user.model');
+const cors = require('cors');
 
 module.exports = function(app) {
     app.options("*", cors());
