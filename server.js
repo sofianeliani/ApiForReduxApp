@@ -50,7 +50,7 @@ try {
   }
 
 const corsOptions = {
-  origin: true,
+  origin: ['*'],
   optionsSuccessStatus: 200,
   credentials: true
 }
