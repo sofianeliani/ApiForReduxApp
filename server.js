@@ -50,15 +50,22 @@ try {
   }
 
 const corsOptions = {
-  origin: ['*'],
-  optionsSuccessStatus: 200,
-  credentials: true
+  // origin: true,
+  // optionsSuccessStatus: 200,
+  // credentials: true
+
 }
 
 /* use middleware */
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+
+app.use(function(req, res ,next)  {
+    res.header('Access-Control-Allow-Origin', 'http://18.157.163.253');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
 
 /* first route */
 app.get('/', (req, res) => res.send({ message: "Hello"}))
