@@ -52,12 +52,7 @@ try {
 
 /* use middleware */
 // app.use(cors());
-app.use(
-  cors({
-    origin: "http://18.192.215.62", // restrict calls to those this address
-    methods: "GET, PUT, POST, DELETE" // only allow GET requests
-  })
-);
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 

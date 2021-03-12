@@ -3,7 +3,7 @@ const controller = require('../controllers/article.controller');
 const Article = require('../models/article.model');
 
 module.exports = function(app) {
-
+    app.options("*", cors());
     app.get("/api/articles/:id", getArticle, (req, res) => {
         res.json(res.article);
       });

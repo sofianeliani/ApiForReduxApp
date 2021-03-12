@@ -3,7 +3,7 @@ const controller = require('../controllers/user.controller');
 const User = require('../models/user.model');
 
 module.exports = function(app) {
-
+    app.options("*", cors());
     app.get("/api/content", controller.content);
 
     app.get("/api/usercontent", [authJwt.verifyToken], controller.userContent);
