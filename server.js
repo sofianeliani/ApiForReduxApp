@@ -49,24 +49,18 @@ try {
     });
   }
 
-const corsOptions = {
-  // origin: true,
-  // optionsSuccessStatus: 200,
-  // credentials: true
-
-}
 
 /* use middleware */
-// app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use(function(req, res ,next)  {
-    res.header('Access-Control-Allow-Origin', 'http://18.192.215.62/');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.options('*', cors());
-    next();
-})
+// app.use(function(req, res ,next)  {
+//     res.header('Access-Control-Allow-Origin', 'http://18.192.215.62/');
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.options('*', cors());
+//     next();
+// })
 
 /* first route */
 app.get('/', (req, res) => res.send({ message: "Hello"}))
