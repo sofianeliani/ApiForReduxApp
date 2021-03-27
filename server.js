@@ -7,7 +7,8 @@ const app = express()
 const port = 3000
 const db = require("./models");
 const Role = db.role;
-const connectionString  = "mongodb+srv://Admin:Admin@cluster0.imlvo.mongodb.net/Myreduxapp?retryWrites=true&w=majority";
+// const connectionString  = "mongodb+srv://Admin:Admin@cluster0.imlvo.mongodb.net/testdatabase?retryWrites=true&w=majority";
+const connectionString = "mongodb+srv://Admin:Admin@cluster0.ighvf.mongodb.net/ApiIsitechReduxApp?retryWrites=true&w=majority"
 try {
   // Connect to the MongoDB cluster
    db.mongoose.connect(
